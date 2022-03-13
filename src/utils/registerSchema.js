@@ -15,17 +15,44 @@ function registerComponentsSchema () {
   const files = require.context('@/custom-components', true, /component.json$/)
   let fields = {}
   let initializing = []
-
+  // console.log('filesfilesfilesfiles', files.keys());
+  /**
+   *  0: "./McContainer/component.json"
+   *  1: "./McImg/component.json"
+   *  2: "./McTab/component.json"
+   *  3: "./McTitle/component.json"
+   */
   files.keys().forEach(key => {
     const [, name] = key.split('/')
+    // console.log('files(key)files(key)files(key)', files(key)); // component.json的内容
     let config = { component: name, ...files(key) }
-    console.log(config)
+    // console.log(config)
 
     fields[name] = config.fields
     initializing.push(initDefaulValue(config))
   })
-  Vue.prototype.$fields = fields
-  Vue.prototype.$initializing = initializing
+  Vue.prototype.$fields = fields // （物料属性描述对象）
+  // console.log('fields', fields);
+  // McContainer: {padding: {…}}
+  // McImg: {imagePath: {…}, radius: {…}}
+  // McTab: {tabList: {…}, attrs: {…}, styles: {…}}
+  // McTitle: {title: {…}, model: {…}, styles: {…}}
+  Vue.prototype.$initializing = initializing // （物料初始化数据集合）
+  // console.log('initializinginitializing', initializing);
+  // 0: {component: 'McContainer', name: '容器', icon: 'icon-rongqi', padding: 0}
+  // 1: {component: 'McImg', name: '图片', icon: 'icon-image', imagePath: '', radius: 0}
+  // 2: {component: 'McTab', name: '图文导航', icon: 'icon-daohang', tabList: Array(4), attrs: {…}, …}
+      // tabList
+      // 0: {id: '0001', label: '推荐酒店', image: 'http://110.42.184.128:8090/img/1638500137694.png'}
+      // 1: {id: '0002', label: '热销抢购', image: 'http://110.42.184.128:8090/img/1638500155713.png'}
+      // 2: {id: '0003', label: '促销门票', image: 'http://110.42.184.128:8090/img/1638500173774.png'}
+      // 3: {id: '0004', label: '机票团购', image: 'http://110.42.184.128:8090/img/1639569399375.png'}
+      // attrs {model: 'fixed', type: 'image-text', max: '4'}
+      // styles {pagePadding: 0, cmpUpperPadding: 0, cmpLowerPadding: 0, cmpUpperRadius: 0, cmpLowerRadius: 0, …}
+
+  // 3: {component: 'McTitle', name: '标题', icon: 'icon-biaotizujian', title: 'LEADING SERIES', model: 'left', …}
+    // styles: {titleSize: 20, titleColor: '#333333'}
+  // length: 4
 }
 
 // 初始化组件初始数据

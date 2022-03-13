@@ -28,8 +28,23 @@ function register (context) {
     let a = ctrl.name
     let b = ctrl
 
-    console.log(a);
-    console.log(b);
+    // console.log(a); // 如，McTab
+    // console.log(b); // {name: 'McTab', props: {…}, computed: {…}, methods: {…}, data: ƒ, …}
+
+      // beforeCreate: [ƒ]
+      // beforeDestroy: [ƒ]
+      // computed: {itemWidth: ƒ}
+      // data: ƒ data()
+      // methods: {getWrapStyle: ƒ, getTabsStyle: ƒ, geItemStyle: ƒ, geItemImgStyle: ƒ}
+      // name: "McTab"
+      // props: {styles: {…}, attrs: {…}, tabList: {…}}
+      // render: ƒ ()
+      // staticRenderFns: []
+      // _Ctor: {0: ƒ}
+      // __file: "src/custom-components/McTab/index.vue"
+      // _compiled: true
+      // _scopeId: "data-v-051e459c"
+      // [[Prototype]]: Object
 
     // 注册组件
     Vue.component(a, b)

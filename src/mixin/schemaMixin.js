@@ -43,7 +43,7 @@ export default {
         value: {
             immediate: true,
             deep:true,
-            handler(newVal,oldVal) {
+            handler(newVal, oldVal) {
                 this.mValue = this.value;
             },
         },

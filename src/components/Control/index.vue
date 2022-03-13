@@ -78,6 +78,21 @@ export default {
 
   computed: {
     curSchema() {
+      // console.log('this.$fields[this.curComponent.component]', this.$fields[this.curComponent.component]);
+      // {title: {…}, model: {…}, styles: {…}}
+        // model: {label: '布局选择', type: 'select', value: 'left', data: Array(2)}
+        // styles: {label: '标题样式', type: 'object', child: {…}}
+        // title: {label: '标题', type: 'string', value: 'LEADING SERIES'}
+      // console.log('curSchema-curComponent', this.curComponent);
+        // component: "McTitle"
+        // icon: "icon-biaotizujian"
+        // id: "1647136196sTLFKZr6"
+        // model: "left"
+        // name: "标题"
+        // styles: Object
+          // titleColor: "#333333"
+          // titleSize: 20
+        // title: "LEADING SERIES"
       return this.$fields[this.curComponent.component];
     },
   },

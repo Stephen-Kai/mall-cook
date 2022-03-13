@@ -65,6 +65,15 @@ export default {
 
     // 选中物料
     setcurComponent(cmp) {
+      // console.log('curComponent', cmp);
+        // icon: "icon-biaotizujian"
+        // id: "1647136196sTLFKZr6"
+        // model: "left"
+        // name: "标题"
+        // styles: Object
+          // titleColor: "#333333"
+          // titleSize: 20
+        // title: "LEADING SERIES"
       this.chontrol.curComponent = cmp;
     },
 

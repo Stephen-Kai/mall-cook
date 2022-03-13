@@ -54,6 +54,7 @@ export default {
   watch: {
     widgets: {
       handler(val) {
+        // console.log('listlistlistlistlistlist', val); // 渲染器中所有的组件的数据
         this.list = val;
       },
       immediate: true,
